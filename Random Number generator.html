@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+</head>
+<style>
+    body{
+    font-family: Verdana;
+    text-align: center;
+}
+button{
+    text-align: center;
+    padding: 5px 25px;
+    border-radius: 7px;
+    background-color:#5aacff;
+    font-size: 20px;
+    animation: rotate 2s;
+}
+button:hover{
+    background-color: #2c99ff;
+}
+.label{
+    font-size: 2em;
+}
+@keyframes rotate{
+    50%{transform: rotateY(360deg)}
+}
+</style>
+<body>
+    <button id="button"> Click to generate Random Numbers </button><br><br>
+    <label id="Label1" class="label"></label><br>
+    <label id="Label2" class="label"></label><br>
+    <label id="Label3" class="label"></label>
+<script>
+    const button = document.getElementById(`button`);
+    const Label1 = document.getElementById(`Label1`);
+    const Label2 = document.getElementById(`Label2`);
+    const Label3 = document.getElementById(`Label3`);
+    let max = 100;
+    let min = 1;
+    
+    button.onclick = function(){
+        random1 = Math.floor(Math.random() * max) + min;
+        random2 = Math.floor(Math.random() * max) + min;
+        random3 = Math.floor(Math.random() * max) + min;
+        Label1.textContent = (random1);
+        Label2.textContent = (random2);
+        Label3.textContent = (random3);
+}
+</script>
+</body>
+</html>
